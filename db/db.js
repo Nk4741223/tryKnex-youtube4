@@ -5,7 +5,8 @@ const knexfile = require("../knexfile");
 
 // const environment = process.env.DATABASE_URL ? "production" : "development";
 let db;
-if (process.env.DATABASE_URL) {
+// if (process.env.DATABASE_URL) {
+if (process.env.PORT) {
   db = knex(knexfile.production);
 } else {
   db = knex(knexfile.development);

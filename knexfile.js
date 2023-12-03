@@ -3,6 +3,11 @@
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
+
+// const { parse } = require("pg-connection-string");
+
+// const dbConnection = parse(process.env.DATABASE_URL);
+
 module.exports = {
   development: {
     client: "postgresql",
@@ -25,7 +30,14 @@ module.exports = {
   },
   production: {
     client: "postgresql",
-    connection: process.env.DATABASE_URL,
+    // connection: process.env.DATABASE_URL,
+    connection: {
+      host: "dpg-clm74b4jtl8s73esf5s0-a",
+      user: "user",
+      password: "FjFfCQpx22kbZ6unTWaKCwO9WNrRkuXH",
+      database: "ccpixels_x1ni",
+      port: 5432,
+    },
     seeds: {
       directory: "./db/seeds",
     },
