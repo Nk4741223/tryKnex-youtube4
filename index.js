@@ -4,6 +4,7 @@ const knex = require("./db/db");
 const app = express();
 
 app.use(express.json());
+const PORT = process.env.PORT || 8080;
 
 //ホーム
 app.get("/", (req, res) => {
@@ -99,6 +100,6 @@ app.delete("/users/:id", (req, res) => {
     });
 });
 
-app.listen("8080", () => {
+app.listen(PORT, () => {
   console.log("Server started at port 8080");
 });
